@@ -1,0 +1,12 @@
+---
+applications:
+- name: random-number-service-broker
+  buildpack: go_buildpack
+  memory: 128M
+  disk_quota: 128M
+  instances: 1
+  env:
+    SECURITY_USER_NAME: daniel 
+    SECURITY_USER_PASSWORD: 63f53854eacffbb5aa36ae91f1f827c9
+    GOVERSION: go1.8
+    GOPACKAGENAME: github.com/dgruber/randomNumberBroker
