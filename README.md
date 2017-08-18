@@ -10,39 +10,39 @@ Create the service broker as Cloud Foundry admin. Replace username and password.
 
 Push the service broker app. Adapt the _manifest.yml_.
 
-   cf push 
+    cf push 
 
 Register the service broker in space.
 
-   cf create-service-broker randombroker daniel 63f53854eacffbb5aa36ae91f1f827c9 https://random-number-service-broker.cfapps.io --space-scoped
+    cf create-service-broker randombroker daniel 63f53854eacffbb5aa36ae91f1f827c9 https://random-number-service-broker.cfapps.io --space-scoped
 
 List service brokers:
 
-   cf service-brokers
+    cf service-brokers
 
 See it in the marketplace:
 
-   cf m
+    cf m
 
 Test it.
 
-   curl -s http://random-number-service-broker.cfapps.io/v2/catalog -u daniel:63f53854eacffbb5aa36ae91f1f827c9
+    curl -s http://random-number-service-broker.cfapps.io/v2/catalog -u daniel:63f53854eacffbb5aa36ae91f1f827c9
 
 ## Usage
 
 Create an instance of the Random Number Service broker:
 
-   cf cs RandomNumberBroker default rand
+    cf cs RandomNumberBroker default rand
 
 Push an app:
 
-   cd $GOPATH/github.com/dgruber/cf-inspect
-   cf push --no-start
+    cd $GOPATH/github.com/dgruber/cf-inspect
+    cf push --no-start
 
 Bind the app:
 
-   cf bs inspect rand
-   cf start inspect
+    cf bs inspect rand
+    cf start inspect
 
 If using this [cf-inspect](https://github.com/dgruber/cf-inspect) thing go to the url and see the random number appears as enviornment variable:
 
@@ -53,5 +53,3 @@ Label | RandomNumberBroker
 Plan | default
 Tags | [random example]
 Credential | 6099489395697162318
-
-
