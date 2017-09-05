@@ -16,6 +16,10 @@ Register the service broker in space.
 
     cf create-service-broker randombroker daniel 63f53854eacffbb5aa36ae91f1f827c9 https://random-number-service-broker.cfapps.io --space-scoped
 
+Make service broker available for others in case _--space-scoped_ is not set and the service was created as admin user.
+
+    cf enable-service-access RandomNumberBroker
+
 List service brokers:
 
     cf service-brokers
